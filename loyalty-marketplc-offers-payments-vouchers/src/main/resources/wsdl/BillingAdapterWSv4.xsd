@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.etisalat.billingadapter.ae/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.etisalat.billingadapter.ae/1.0">
+
+<xs:element name="chargeImmediate" type="tns:chargeImmediate"/>
+
+<xs:element name="chargeImmediateResponse" type="tns:chargeImmediateResponse"/>
+
+<xs:element name="continueCharge" type="tns:continueCharge"/>
+
+<xs:element name="continueChargeResponse" type="tns:continueChargeResponse"/>
+
+<xs:element name="getIP" type="tns:getIP"/>
+
+<xs:element name="getIPResponse" type="tns:getIPResponse"/>
+
+<xs:element name="getUserName" type="tns:getUserName"/>
+
+<xs:element name="getUserNameResponse" type="tns:getUserNameResponse"/>
+
+<xs:element name="isAmountInRange" type="tns:isAmountInRange"/>
+
+<xs:element name="isAmountInRangeResponse" type="tns:isAmountInRangeResponse"/>
+
+<xs:element name="isAmountInRangeSpecialCase" type="tns:isAmountInRangeSpecialCase"/>
+
+<xs:element name="isAmountInRangeSpecialCaseResponse" type="tns:isAmountInRangeSpecialCaseResponse"/>
+
+<xs:element name="isAmountInUserRange" type="tns:isAmountInUserRange"/>
+
+<xs:element name="isAmountInUserRangeResponse" type="tns:isAmountInUserRangeResponse"/>
+
+<xs:element name="isAmountInUserRangeSpecialCase" type="tns:isAmountInUserRangeSpecialCase"/>
+
+<xs:element name="isAmountInUserRangeSpecialCaseResponse" type="tns:isAmountInUserRangeSpecialCaseResponse"/>
+
+<xs:element name="refundImmediate" type="tns:refundImmediate"/>
+
+<xs:element name="refundImmediateResponse" type="tns:refundImmediateResponse"/>
+
+<xs:element name="startCharge" type="tns:startCharge"/>
+
+<xs:element name="startChargeResponse" type="tns:startChargeResponse"/>
+
+<xs:element name="stopCharge" type="tns:stopCharge"/>
+
+<xs:element name="stopChargeResponse" type="tns:stopChargeResponse"/>
+
+<xs:complexType name="chargeImmediate">
+<xs:sequence>
+<xs:element name="ChargeImmediateRequest" type="tns:ChargeImmediateRequest" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChargeImmediateRequest">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="additionalInformation" type="tns:AdditionInfo"/>
+<xs:element name="subscriberID" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AdditionInfo">
+<xs:sequence>
+<xs:element name="contentId" type="xs:integer"/>
+<xs:element name="contentName" type="xs:string"/>
+<xs:element name="contentType" type="xs:string" nillable="true" minOccurs="0"/>
+<xs:element name="channel" type="xs:string" nillable="true" minOccurs="0"/>
+<xs:element name="transactionId" type="xs:integer"/>
+<xs:element name="subscriptionType" type="xs:integer"/>
+<xs:element name="barCode" type="xs:integer" nillable="true" minOccurs="0"/>
+<xs:element name="contentProviderId" type="xs:integer"/>
+<xs:element name="revenuePercent" type="xs:integer" nillable="true" minOccurs="0"/>
+<xs:element name="additionalParams" type="tns:ExtraPrams" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ExtraPrams">
+<xs:sequence>
+<xs:element name="paramName" type="xs:string" minOccurs="0"/>
+<xs:element name="paramValue" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargeImmediateResponse">
+<xs:sequence>
+<xs:element name="ChargeImmediatelyResponse" type="tns:ChargeImmediatelyResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChargeImmediatelyResponse">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="statusCode" type="xs:int"/>
+<xs:element name="additionalResponseList" type="tns:AdditionResponse" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AdditionResponse">
+<xs:sequence>
+<xs:element name="property" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInRangeSpecialCase">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInRangeSpecialCaseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="continueCharge">
+<xs:sequence>
+<xs:element name="ContinueChargeRequest" type="tns:ContinueChargeRequest" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ContinueChargeRequest">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="sessionID" type="xs:string"/>
+<xs:element name="timeout" type="xs:int"/>
+<xs:element name="additionalParams" type="tns:ExtraPrams" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="continueChargeResponse">
+<xs:sequence>
+<xs:element name="ContinueChargingResponse" type="tns:ContinueChargingResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ContinueChargingResponse">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="sessionID" type="xs:string" nillable="true"/>
+<xs:element name="statusCode" type="xs:int"/>
+<xs:element name="timeout" type="xs:int"/>
+<xs:element name="additionalResponseList" type="tns:AdditionResponse" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInUserRange">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInUserRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopCharge">
+<xs:sequence>
+<xs:element name="StopChargRequest" type="tns:StopChargingRequest" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StopChargingRequest">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="sessionID" type="xs:string"/>
+<xs:element name="additionalParams" type="tns:ExtraPrams" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopChargeResponse">
+<xs:sequence>
+<xs:element name="StopChargingResponse" type="tns:StopChargingResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StopChargingResponse">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="sessionID" type="xs:string" nillable="true"/>
+<xs:element name="statusCode" type="xs:int"/>
+<xs:element name="additionalResponseList" type="tns:AdditionResponse" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInUserRangeSpecialCase">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInUserRangeSpecialCaseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUserNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIP">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getIPResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startCharge">
+<xs:sequence>
+<xs:element name="StartChargeRequest" type="tns:StartChargingRequest" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StartChargingRequest">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="additionalInformation" type="tns:AdditionInfo"/>
+<xs:element name="subscriberID" type="xs:string"/>
+<xs:element name="timeout" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startChargeResponse">
+<xs:sequence>
+<xs:element name="StartChargingResponse" type="tns:StartChargingResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StartChargingResponse">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="sessionID" type="xs:string" nillable="true"/>
+<xs:element name="statusCode" type="xs:int"/>
+<xs:element name="timeout" type="xs:int"/>
+<xs:element name="additionalResponseList" type="tns:AdditionResponse" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInRange">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isAmountInRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="refundImmediate">
+<xs:sequence>
+<xs:element name="RefundImmediateRequest" type="tns:RefundImmediatelyRequest" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RefundImmediatelyRequest">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="additionalInformation" type="tns:AdditionInfo"/>
+<xs:element name="subscriberID" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="refundImmediateResponse">
+<xs:sequence>
+<xs:element name="RefundImmediatelyResponse" type="tns:RefundImmediatelyResponse" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RefundImmediatelyResponse">
+<xs:sequence>
+<xs:element name="amount" type="xs:int"/>
+<xs:element name="statusCode" type="xs:int"/>
+<xs:element name="additionalResponseList" type="tns:AdditionResponse" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://rt.responsetek.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://rt.responsetek.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://rt.responsetek.com/">
+      <s:element name="EnqueueInvites">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:RTXmlMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RTXmlMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="rt-client-id" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rt-config-id" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="invitation" nillable="true" type="tns:RTInvitation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTInvitation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="collection-point" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="invite-type" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="invite-tstamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="invite-lang" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custom-fields" type="tns:RTCustom" />
+          <s:element minOccurs="1" maxOccurs="1" name="consumer" nillable="true" type="tns:RTConsumer" />
+          <s:element minOccurs="0" maxOccurs="1" name="primary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="secondary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="tertiary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="quaternary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="quinary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="senary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="septenary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="octonary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="1" name="nonary-hierarchy" type="tns:RTHierarchyList" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="extended-custom-fields" type="tns:RTDynamicCustom" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTCustom">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="text1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="option9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionName9" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTConsumer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="phone-number" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="email" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custom" type="tns:RTCustom" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTHierarchyList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="hierarchy-list" type="tns:RTHierarchy" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTHierarchy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="level" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountable-user-name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountable-user-first-name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountable-user-last-name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountable-user-email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTDynamicCustom">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="type" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="extended-custom-field-data" type="tns:RTKeyValuePair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RTKeyValuePair">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="key" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="value" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnqueueInvitesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnqueueInvitesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:RTToken" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RTToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="rt-token" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProcessStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcessStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EnqueueInvitesSoapIn">
+    <wsdl:part name="parameters" element="tns:EnqueueInvites" />
+  </wsdl:message>
+  <wsdl:message name="EnqueueInvitesSoapOut">
+    <wsdl:part name="parameters" element="tns:EnqueueInvitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RTInviteSoap">
+    <wsdl:operation name="EnqueueInvites">
+      <wsdl:input message="tns:EnqueueInvitesSoapIn" />
+      <wsdl:output message="tns:EnqueueInvitesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStatus">
+      <wsdl:input message="tns:GetProcessStatusSoapIn" />
+      <wsdl:output message="tns:GetProcessStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RTInviteHttpGet" />
+  <wsdl:portType name="RTInviteHttpPost" />
+  <wsdl:binding name="RTInviteSoap" type="tns:RTInviteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnqueueInvites">
+      <soap:operation soapAction="http://rt.responsetek.com/EnqueueInvites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStatus">
+      <soap:operation soapAction="http://rt.responsetek.com/GetProcessStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RTInviteSoap12" type="tns:RTInviteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnqueueInvites">
+      <soap12:operation soapAction="http://rt.responsetek.com/EnqueueInvites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStatus">
+      <soap12:operation soapAction="http://rt.responsetek.com/GetProcessStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RTInviteHttpGet" type="tns:RTInviteHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="RTInviteHttpPost" type="tns:RTInviteHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="RTInvite">
+    <wsdl:port name="RTInviteSoap" binding="tns:RTInviteSoap">
+      <soap:address location="https://uat-cfmreporting.etisalat.corp.ae/WS_Invite/RtInvite.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RTInviteSoap12" binding="tns:RTInviteSoap12">
+      <soap12:address location="https://uat-cfmreporting.etisalat.corp.ae/WS_Invite/RtInvite.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RTInviteHttpGet" binding="tns:RTInviteHttpGet">
+      <http:address location="https://uat-cfmreporting.etisalat.corp.ae/WS_Invite/RtInvite.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RTInviteHttpPost" binding="tns:RTInviteHttpPost">
+      <http:address location="https://uat-cfmreporting.etisalat.corp.ae/WS_Invite/RtInvite.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

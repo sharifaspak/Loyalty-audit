@@ -1,0 +1,89 @@
+{
+    "apiStatus": {
+        "message": "Member retrieved successfully. ",
+        "overallStatus": "SUCCESS",
+        "statusCode": 0
+    },
+    "result": {
+        "memberResponse": {
+            "transactionId": "",
+            "accountsInfo": [
+                {
+                    "channelId": "ADIB",
+                    "accountNumber": "888888888",
+                    "accountId": 699761852,
+                    "customerType": [
+                        "DU"
+                    ],
+                    "loyaltyId": "ADIB_888888888_500000",
+                    "deviceId": "77777777",
+                    "language": "English",
+                    "uilanguage": "English",
+                    "mobileNumber": "888888888",
+                    "accountAuthority": "PRIMARY",
+                    "accountStartDate": "2020-01-20T09:14:08.674+0000",
+                    "email": "suresh345@gmail.com",
+                    "firstName": "suresh",
+                    "lastName": "sahoo",
+                    "middleName": "kumar",
+                    "gender": "Male",
+                    "nationality": "91",
+                    "dob": "2019-08-23T00:00:00.000+0000",
+                    "blockReason": null,
+                    "documentId": "77777777",
+                    "partyId": null,
+                    "firstAccessFlag": true,
+                    "accountStatus": "ACTIVE",
+                    "numberType": "POS",
+                    "atgUserName": null,
+                    "subscribtionStatus": "true",
+                    "lifetimeSavings": 0.0,
+                    "totalPoints": 0,
+                    "nextExpiryDate": null,
+                    "nextExpiryPoints": 0,
+                    "ceasedPoints": 0,
+                    "sharingBonusCounterRemaining": 0,
+                    "interest": null,
+                    "eligibleFeatures": null,
+                    "nonEligibleFeatures": null,
+                    "eligiblePaymentMethod": null,
+                    "crmInfo": null,
+                    "emailVerification": {
+                        "verificationStatus": "PENDING",
+                        "verificationDate": "2020-01-20T09:14:08.698+0000"
+                    },
+                    "primary": true,
+                    "blocked": false
+                }
+            ],
+            "memberInfo": {
+                "primaryAccount": "888888888",
+                "tierLevel": "Rewards",
+                "totalTierPoints": 0.0,
+                "membershipCode": "500000",
+                "atgUsername": null,
+                "startDate": "2020-01-20T09:14:08.592+0000",
+                "endDate": "2020-01-20T09:14:08.592+0000",
+                "status": "ACTIVE",
+                "flagBlocked": false,
+                "blockedReason": null,
+                "firstAccessFlag": true,
+                "pointsTonextTierLevel": 100.0,
+                "lifetimeSavings": 0.0,
+                "totalPoints": 0.0,
+                "nextExpiryDate": "2020-02-03T09:27:18.034+0000",
+                "nextExpiryPoints": 0.0,
+                "membershipNotes": [
+                    {
+                        "note": "Membership Created Through Enrollment",
+                        "createdUser": "suresh",
+                        "createdDate": "2020-01-20T09:14:08.592+0000"
+                    }
+                ],
+                "top3Account": [
+                    "888888888"
+                ]
+            }
+        }
+    }
+}

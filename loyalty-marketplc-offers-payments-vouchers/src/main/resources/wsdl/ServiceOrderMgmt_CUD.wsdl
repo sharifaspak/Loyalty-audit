@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:ns16="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDResponse.xsd" xmlns:ns17="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRequest.xsd" xmlns:ns14="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderResponse.xsd" xmlns:ns15="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDRequest.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns18="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRespose.xsd" xmlns:ns19="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns9="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountRequestRequest.xsd" xmlns:ns12="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderResponse.xsd" xmlns:ns5="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceRequest.xsd" xmlns:ns13="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderRequest.xsd" xmlns:ns6="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceResponse.xsd" xmlns:ns10="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountResponse.xsd" xmlns:ns7="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesRequest.xsd" xmlns:ns20="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:ns11="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderRequest.xsd" xmlns:ns8="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesResponse.xsd" xmlns:ns2="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionResponse.xsd" xmlns:ns4="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesResponse.xsd" xmlns:ns3="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesRequest.xsd" xmlns:tns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD" xmlns:ns0="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionRequest.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD">
+    <wsdl:documentation>Version : 0.5
+Created by : ESB_BPM_TEAM
+Last Updated By : Jomit Shijo
+Description: Updated for 56823-Business VoIP Calling Plans
+Version : 0.4
+Created by : ESB_BPM_TEAM
+Last Updated By : Susant Kumar
+Description: Updated for TM_148118 - Apple DEP
+Version : 0.3
+Created by : ESB_BPM_TEAM
+Last Updated By : Jomit Shijo
+Modified Date : 2017-11-16
+Description : Opertaion OpActivateBODcreated for RvCPE NEC SO Transformation Phase-3
+Version : 0.2
+Updated By : Roshini Kumar
+Modified Date : 2017-10-29
+Description : Opertaion OpYPAYServiceOrder created for 100023 - Ad funded Calls
+Version : 0.1
+Updated By : Sahid Khan
+Modified Date : 2017-10-26
+Description
+0.1 :Operation OpUnsubscribeServices added  during 136081 Wayek Integration
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="YPAYServiceOrderRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="MSISDN" type="xs:string"/>
+                                    <xs:element name="TypeOfSubscription" type="xs:string"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="ActivateBoDRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="AccountID" type="xs:string"/>
+                                    <xs:element name="BoDID" type="xs:string"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="UpdateSaaSAccountRequestResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="Action" type="xs:string"/>
+                                    <xs:element name="AccountID" type="xs:string"/>
+                                    <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ns2="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:complexType name="ManageGameStreamSubscriptionResponseType">
+                <xs:sequence>
+                    <xs:element ref="ResponseData" minOccurs="0"/>
+                    <xs:element ref="ns1:AckMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResponseDataType">
+                <xs:sequence>
+                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ManageGameStreamSubscriptionResponse" type="ManageGameStreamSubscriptionResponseType"/>
+            <xs:element name="ResponseData" type="ResponseDataType"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="SubscribeServicesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="Details" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="PackageID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ResposneMessage" type="xs:string" minOccurs="0"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ActivateBoDResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="ActivateBoDResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrderResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="YPAYServiceOrderResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="ProvisionSaaSServiceRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="AccountID" type="xs:string"/>
+                                    <xs:element name="Action" type="xs:string"/>
+                                    <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="ProvisionServiceOrderRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="ServiceOrder" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ServiceOrderID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ServiceType" type="xs:string"/>
+                                                <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ServiceAction" type="xs:string"/>
+                                                <xs:element name="AccountInformation" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="AccountNumber" type="xs:string" minOccurs="0"/>
+                                                            <xs:element name="AccountID" type="xs:string" minOccurs="0"/>
+                                                            <xs:element name="InternetUserName" type="xs:string" minOccurs="0"/>
+                                                            <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="ApplicationHeader">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="TransactionID" type="xs:string"/>
+                        <xs:element name="RequestedSystem" type="xs:string"/>
+                        <xs:element name="RetryLimit" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RequestedDate" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSServiceResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="ProvisionSaaSServiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string"/>
+                                    <xs:element name="Action" type="xs:string"/>
+                                    <xs:element name="AccountID" type="xs:string"/>
+                                    <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRespose.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRespose.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="AppleDEPEnrollmentRespose">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string"/>
+                                    <xs:element name="DEPTransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="ListOfErrors" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ErrorCode" type="xs:string"/>
+                                                <xs:element name="ErrorMessage" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollmentRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="AppleDEPEnrollmentRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="DepResellerID" type="xs:string"/>
+                                    <xs:element name="RequestContext">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ShipTo" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="LangCode" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="TimeZone" type="xs:string" minOccurs="0"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Orders" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="OrderNumber" type="xs:string"/>
+                                                <xs:element name="OrderDate" type="xs:string"/>
+                                                <xs:element name="OrderType" type="xs:string"/>
+                                                <xs:element name="CustomerID" type="xs:string"/>
+                                                <xs:element name="PoNumber" type="xs:string"/>
+                                                <xs:element name="Deliveries" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="DeliveryNumber" type="xs:string"/>
+                                                            <xs:element name="ShipDate" type="xs:string"/>
+                                                            <xs:element name="Devices" maxOccurs="unbounded">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="DeviceId" type="xs:string"/>
+                                                                        <xs:element name="AssetTag" type="xs:string" minOccurs="0"/>
+                                                                        <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="AdditionalInfo" minOccurs="0" maxOccurs="unbounded">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="Name" type="xs:string"/>
+                                                                        <xs:element name="Value" type="xs:string"/>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="AdditionalInfo" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Name" type="xs:string"/>
+                                                            <xs:element name="Value" type="xs:string"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:complexType name="DataHeaderType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="xs:string"/>
+                    <xs:element name="PackageID" type="xs:string" minOccurs="0"/>
+                    <xs:element name="TargetSystem" type="xs:string"/>
+                    <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                    <xs:element name="DeactivateAll" type="xs:string" minOccurs="0"/>
+                    <xs:element name="RetainIFR" type="xs:string" minOccurs="0"/>
+                    <xs:element name="CRBTUnsubscriptionDetails" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="APartyMSISDN" type="xs:string"/>
+                                <xs:element name="ToneId" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PackName" type="xs:string"/>
+                                <xs:element name="Priority" type="xs:string"/>
+                                <xs:element name="LanguageID" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnsubscribeServicesRequestType">
+                <xs:sequence>
+                    <xs:element ref="ns1:ApplicationHeader"/>
+                    <xs:element ref="ns7:DataHeader"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="DataHeader" type="ns7:DataHeaderType"/>
+            <xs:element name="UnsubscribeServicesRequest" type="ns7:UnsubscribeServicesRequestType"/>
+        </xs:schema>
+        <xs:schema xmlns:ns2="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServicesResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:complexType name="ResponseDataType">
+                <xs:sequence>
+                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Details" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="BillingID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PurchaseID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="PurchaseIsDone" type="xs:boolean" minOccurs="0"/>
+                                <xs:element name="RecurrentPurchaseID" type="xs:string" minOccurs="0"/>
+                                <xs:element name="StatusCode" type="xs:string" minOccurs="0"/>
+                                <xs:element name="UnlimitedTicketUsed" type="xs:boolean" minOccurs="0"/>
+                                <xs:element name="TicketConsumed" type="xs:boolean" minOccurs="0"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UnsubscribeServicesResponseType">
+                <xs:sequence>
+                    <xs:element ref="ns8:ResponseData" minOccurs="0"/>
+                    <xs:element ref="ns1:AckMessage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ResponseData" type="ns8:ResponseDataType"/>
+            <xs:element name="UnsubscribeServicesResponse" type="ns8:UnsubscribeServicesResponseType"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/SubscribeServicesRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="SubscribeServicesRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Msisdn" type="xs:string"/>
+                                    <xs:element name="PackageID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                    <xs:element name="TargetSystem" type="xs:string"/>
+                                    <xs:element name="Duration" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="CRBTSubscriptionDetails" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="APartyMSISDN" type="xs:string"/>
+                                                <xs:element name="ToneID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="PackName" type="xs:string"/>
+                                                <xs:element name="TonePath" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="CPNAME" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ToneName" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="Priority" type="xs:string"/>
+                                                <xs:element name="LanguageID" type="xs:string"/>
+                                                <xs:element name="PaymentMode" type="xs:string"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscriptionRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:complexType name="DataHeaderType">
+                <xs:sequence>
+                    <xs:element name="AccountNumber" type="xs:string"/>
+                    <xs:element name="IPTVNumber" type="xs:string"/>
+                    <xs:element name="RenewalFlag" type="xs:string"/>
+                    <xs:element name="OrderID" type="xs:string"/>
+                    <xs:element name="RateplanID" type="xs:string"/>
+                    <xs:element name="TimeStamp" type="xs:string"/>
+                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ManageGameStreamSubscriptionRequestType">
+                <xs:sequence>
+                    <xs:element ref="ns1:ApplicationHeader"/>
+                    <xs:element ref="DataHeader"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="DataHeader" type="DataHeaderType"/>
+            <xs:element name="ManageGameStreamSubscriptionRequest" type="ManageGameStreamSubscriptionRequestType"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="AdditionalInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string"/>
+                        <xs:element name="Value" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountRequestRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccountRequestRequest.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+            <xs:element name="UpdateSaaSAccountRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:ApplicationHeader"/>
+                        <xs:element name="DataHeader">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="OldAccountID" type="xs:string"/>
+                                    <xs:element name="NewAccountID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="NewAccountNumber" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="Action" type="xs:string"/>
+                                    <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderResponse.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrderResponse.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/Common.xsd"/>
+            <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+            <xs:element name="ProvisionServiceOrderResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ResponseData" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+                                    <xs:element name="ServiceOrder" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ServiceOrderID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ServiceType" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="ServiceAction" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="AccountInformation" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="AccountNumber" type="xs:string" minOccurs="0"/>
+                                                            <xs:element name="AccountID" type="xs:string" minOccurs="0"/>
+                                                            <xs:element name="InternetUserName" type="xs:string" minOccurs="0"/>
+                                                            <xs:element name="Status" type="xs:string" minOccurs="0"/>
+                                                            <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="ns0:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="ns1:AckMessage"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="AckMessage">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Status">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="SUCCESS"/>
+                                    <xs:enumeration value="FAILURE"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+                        <xs:element name="ErrorType" type="xs:string" minOccurs="0"/>
+                        <xs:element name="ErrorDescription" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="ServiceOrderMgmt_CUD">
+        <wsdl:port name="ServiceOrderMgmt_CUDEndpoint" binding="tns:ServiceOrderMgmt_CUDEndpointBinding">
+            <soap:address location="http://localhost:9375/Middleware/ServiceOrderMgmt_CUD"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="ServiceOrderMgmt_CUD">
+        <wsdl:operation name="OpManageGameStreamSubscription">
+            <wsdl:input message="tns:ManageGameStreamSubscriptionRequest"/>
+            <wsdl:output message="tns:ManageGameStreamSubscriptionResponse"/>
+            <wsdl:fault name="fault1" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpSubscribeServices">
+            <wsdl:input message="tns:SubscribeServicesRequest"/>
+            <wsdl:output message="tns:SubscribeServicesResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpProvisionSaaSService">
+            <wsdl:input message="tns:ProvisionSaaSServiceRequest"/>
+            <wsdl:output message="tns:ProvisionSaaSServiceResponse"/>
+            <wsdl:fault name="fault1" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpUnsubscribeServices">
+            <wsdl:input message="tns:UnsubscribeServicesRequest"/>
+            <wsdl:output message="tns:UnsubscribeServicesResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpUpdateSaaSAccount">
+            <wsdl:input message="tns:UpdateSaaSAccountRequest"/>
+            <wsdl:output message="tns:UpdateSaaSAccountResponse"/>
+            <wsdl:fault name="fault1" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpYPAYServiceOrder">
+            <wsdl:input message="tns:YPAYServiceOrderRequest"/>
+            <wsdl:output message="tns:YPAYServiceOrderResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpProvisionServiceOrder">
+            <wsdl:input message="tns:ProvisionServiceOrderRequest"/>
+            <wsdl:output message="tns:ProvisionServiceOrderResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpActivateBoD">
+            <wsdl:input message="tns:ActivateBoDRequest"/>
+            <wsdl:output message="tns:ActivateBoDResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+        <wsdl:operation name="OpAppleDEPEnrollment">
+            <wsdl:input message="tns:AppleDEPEnrollmentRequest"/>
+            <wsdl:output message="tns:AppleDEPEnrollmentResponse"/>
+            <wsdl:fault name="fault" message="tns:Error"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServiceOrderMgmt_CUDEndpointBinding" type="tns:ServiceOrderMgmt_CUD">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="OpManageGameStreamSubscription">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/ManageGameStreamSubscription"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ManageGameStreamSubscriptionRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ManageGameStreamSubscriptionResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpSubscribeServices">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/SubscribeServices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="SubscribeServicesRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="SubscribeServicesResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpProvisionSaaSService">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/ProvisionSaaSService"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ProvisionSaaSServiceRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ProvisionSaaSServiceResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpUnsubscribeServices">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/UnsubscribeServices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="UnsubscribeServicesRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="UnsubscribeServicesResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpUpdateSaaSAccount">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/UpdateSaaSAccount"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="UpdateSaaSAccountRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="UpdateSaaSAccountResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpYPAYServiceOrder">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/YPAYServiceOrder"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="YPAYServiceOrderRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="YPAYServiceOrderResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpProvisionServiceOrder">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/ProvisionServiceOrder"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ProvisionServiceOrderRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ProvisionServiceOrderResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpActivateBoD">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/ActivateBoD"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ActivateBoDRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ActivateBoDResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OpAppleDEPEnrollment">
+            <soap:operation style="document" soapAction="/Middleware/ServiceOrderMgmt_CUD/AppleDEPEnrollment"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="AppleDEPEnrollmentRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="AppleDEPEnrollmentResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="ManageGameStreamSubscriptionRequest">
+        <wsdl:part name="ManageGameStreamSubscriptionRequest" element="ns0:ManageGameStreamSubscriptionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ManageGameStreamSubscriptionResponse">
+        <wsdl:part name="ManageGameStreamSubscriptionResponse" element="ns1:ManageGameStreamSubscriptionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="Error">
+        <wsdl:part name="Error" element="ns2:AckMessage"/>
+    </wsdl:message>
+    <wsdl:message name="SubscribeServicesRequest">
+        <wsdl:part name="SubscribeServicesRequest" element="ns3:SubscribeServicesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="SubscribeServicesResponse">
+        <wsdl:part name="SubscribeServicesResponse" element="ns4:SubscribeServicesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ProvisionSaaSServiceRequest">
+        <wsdl:part name="ProvisionSaaSServiceRequest" element="ns5:ProvisionSaaSServiceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ProvisionSaaSServiceResponse">
+        <wsdl:part name="ProvisionSaaSServiceResponse" element="ns6:ProvisionSaaSServiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UnsubscribeServicesRequest">
+        <wsdl:part name="UnsubscribeServicesRequest" element="ns7:UnsubscribeServicesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UnsubscribeServicesResponse">
+        <wsdl:part name="UnsubscribeServicesResponse" element="ns8:UnsubscribeServicesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateSaaSAccountRequest">
+        <wsdl:part name="UpdateSaaSAccountRequest" element="ns9:UpdateSaaSAccountRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateSaaSAccountResponse">
+        <wsdl:part name="UpdateSaaSAccountResponse" element="ns10:UpdateSaaSAccountRequestResponse"/>
+    </wsdl:message>
+    <wsdl:message name="YPAYServiceOrderRequest">
+        <wsdl:part name="YPAYServiceOrderRequest" element="ns11:YPAYServiceOrderRequest"/>
+    </wsdl:message>
+    <wsdl:message name="YPAYServiceOrderResponse">
+        <wsdl:part name="YPAYServiceOrderResponse" element="ns12:YPAYServiceOrderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ProvisionServiceOrderRequest">
+        <wsdl:part name="ProvisionServiceOrderRequest" element="ns13:ProvisionServiceOrderRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ProvisionServiceOrderResponse">
+        <wsdl:part name="ProvisionServiceOrderResponse" element="ns14:ProvisionServiceOrderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ActivateBoDRequest">
+        <wsdl:part name="ActivateBoDRequest" element="ns15:ActivateBoDRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ActivateBoDResponse">
+        <wsdl:part name="ActivateBoDResponse" element="ns16:ActivateBoDResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AppleDEPEnrollmentRequest">
+        <wsdl:part name="AppleDEPEnrollmentRequest" element="ns17:AppleDEPEnrollmentRequest"/>
+    </wsdl:message>
+    <wsdl:message name="AppleDEPEnrollmentResponse">
+        <wsdl:part name="AppleDEPEnrollmentResponse" element="ns18:AppleDEPEnrollmentRespose"/>
+    </wsdl:message>
+</wsdl:definitions>
